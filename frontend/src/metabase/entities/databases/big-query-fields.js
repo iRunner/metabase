@@ -77,7 +77,7 @@ export default function getFieldsForBigQuery(details) {
         name: "dataset-id",
         "display-name": "Dataset ID",
         placeholder: "toucanSightings",
-        required: true,
+        required: false,
       },
       ...(useServiceAccount
         ? [

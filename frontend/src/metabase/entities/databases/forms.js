@@ -151,7 +151,7 @@ function getAuthCodeLink(engine, details) {
         {jt`${(
           <ExternalLink href={authCodeURL}>{t`Click here`}</ExternalLink>
         )} to get an auth code.`}
-        {engine === "bigquery" && (
+        {(engine === "bigquery" || engine === "bigquery_alt") && (
           <span>
             {" "}
             ({t`or`}{" "}
@@ -197,6 +197,7 @@ function getEngineInfo(engine, details, id) {
   switch (engine) {
     // BigQuery has special logic to switch out forms depending on what style of authenication we use.
     case "bigquery":
+    case "bigquery_alt":
       return getFieldsForBigQuery(details);
     // Mongo has special logic to switch between a connection URI and broken out fields
     case "mongo":
